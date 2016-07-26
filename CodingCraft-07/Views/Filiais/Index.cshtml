@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CodingCraft_07.Models.Filial>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FilialId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FilialId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FilialId })
+        </td>
+    </tr>
+}
+
+</table>
